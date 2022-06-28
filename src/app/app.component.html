@@ -1,0 +1,58 @@
+ <h1>{{pageTitle}}</h1>
+<!--
+<app-helloworld></app-helloworld>
+<app-student></app-student>
+
+
+we can specify selectors in three types
+<app-one></app-one>
+<div class="app-two"></div>
+<div app-three></div>
+<app-test></app-test>
+
+
+<hr />
+<app-propertybinding></app-propertybinding>
+<hr />
+<app-classbinding></app-classbinding>
+<hr />
+<app-stylebinding></app-stylebinding>
+<hr />
+<app-eventbinding></app-eventbinding>
+<hr />
+<app-temp-ref-var></app-temp-ref-var>
+<hr />
+<app-twowaybinding></app-twowaybinding>
+<hr />
+<app-ng-ifdirective></app-ng-ifdirective>
+<hr />
+<app-ng-switchdirective></app-ng-switchdirective>
+<hr />
+<app-ng-fordirective></app-ng-fordirective>
+<hr />
+<app-child (childInfo)="msg=$event" [fromParent]="parentMsg"></app-child>
+<h1>{{msg}}</h1>
+<hr />
+<app-pipes></app-pipes>
+<hr />
+<app-students-list></app-students-list>
+<hr />
+<app-student-details></app-student-details>
+<hr />
+<app-employees-list></app-employees-list>
+<hr />
+<app-employee-details></app-employee-details>
+<hr />
+<app-myhobbies></app-myhobbies>
+<hr /> -->
+
+<nav>
+    <a routerLink="/softwareengineer" routerLinkActive="active"> software engineers</a>
+    <!-- routerLinkActive="active"   active ka code css me hai.   this is for showing that we r in particular component-->
+    <a routerLink="/roleslist" routerLinkActive="active"> roles list</a>
+    <a routerLink="/it" routerLinkActive="active">IT </a>
+    <a routerLink="/course-list" routerLinkActive="active">Course List</a>
+</nav>
+
+
+<router-outlet></router-outlet>
