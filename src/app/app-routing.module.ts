@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminAccessGuard } from './admin-access.guard';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CourseDurationComponent } from './course-duration/course-duration.component';
 import { CourseFeeComponent } from './course-fee/course-fee.component';
@@ -14,6 +16,7 @@ import { SoftwareEngineerComponent } from './software-engineer/software-engineer
 const routes: Routes =
   [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, //pathMatch:'full': In this case, when app is launched on localhost:4200 (or some server) the default page will be welcome screen, since the url will be https://localhost:4200/
+    { path: 'admin', component: AdminHomeComponent, canActivate:[AdminAccessGuard]},
     { path: 'home', component: HomeComponent },
     { path: 'softwareengineer', component: SoftwareEngineerComponent },  //useAsDefault: true
     { path: 'roleslist', component: RolesListComponent },
@@ -22,11 +25,13 @@ const routes: Routes =
     {
       path: 'course-list/:id', component: CourseDetailsComponent,
       children: [
-        {path:'duration',component: CourseDurationComponent},
-        {path:'fee',component: CourseFeeComponent}
+        { path: 'duration', component: CourseDurationComponent },
+        { path: 'fee', component: CourseFeeComponent }
       ]
-    },
-  { path: 'faculty', loadChildren: () => import('./faculty/faculty.module').then(m => m.FacultyModule) }, //:id is a placeholder for url parameter    //children property takes array and every path trated as a seperate array.
+    }, //:id is a placeholder for url parameter    //children property takes array and every path trated as a seperate array.
+
+    { path: 'faculty', loadChildren: () => import('./faculty/faculty.module').then(m => m.FacultyModule) },
+
     { path: "**", component: PageNotFoundComponent }, //   ** ---> its a wildcard component i.e., if no component found then this component will comes into the picture.  // note this component path always should be at last
   ];  //here we define the routes for our angular application.  //each route is nothing but an object.
 

@@ -39,6 +39,8 @@ import { CourselistComponent } from './courselist/courselist.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CourseDurationComponent } from './course-duration/course-duration.component';
 import { CourseFeeComponent } from './course-fee/course-fee.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminAccessGuard } from './admin-access.guard';
 
 
 
@@ -77,16 +79,17 @@ import { CourseFeeComponent } from './course-fee/course-fee.component';
     CourseDetailsComponent,
     CourseDurationComponent,
     CourseFeeComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
-    
-    
+
+
   ],
-  providers: [EmployeeService, MyhobbiesService],
+  providers: [EmployeeService, MyhobbiesService, AdminAccessGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
