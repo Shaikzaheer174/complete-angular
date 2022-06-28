@@ -17,12 +17,12 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class TwowaybindingComponent implements OnInit {
-  public data="";
-  constructor() { } 
+  public data ="";
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  
+
 
 }
