@@ -25,7 +25,8 @@ const routes: Routes =
         {path:'duration',component: CourseDurationComponent},
         {path:'fee',component: CourseFeeComponent}
       ]
-    }, //:id is a placeholder for url parameter    //children property takes array and every path trated as a seperate array.
+    },
+  { path: 'faculty', loadChildren: () => import('./faculty/faculty.module').then(m => m.FacultyModule) }, //:id is a placeholder for url parameter    //children property takes array and every path trated as a seperate array.
     { path: "**", component: PageNotFoundComponent }, //   ** ---> its a wildcard component i.e., if no component found then this component will comes into the picture.  // note this component path always should be at last
   ];  //here we define the routes for our angular application.  //each route is nothing but an object.
 
